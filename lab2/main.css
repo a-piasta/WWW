@@ -131,6 +131,21 @@ footer {
     max-width: 1800px;
 }
 
-div[id="formularz"] {
+.formularz {
     text-align: left;
+}
+
+.passenger {
+    position: relative;
+}
+
+.passenger .miejsce {
+    display: none;
+}
+
+.passenger:hover .miejsce {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 200px;
 }
