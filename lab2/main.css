@@ -79,19 +79,19 @@ td {
     padding-bottom: 4px;
 }
 
-td[delay] {
+.delay {
     font-weight: bold;
 }
 
-td[delay="cancelled"] {
+.delay[id="cancelled"] {
     color: red;
 }
 
-td[delay="huge"] {
+.delay[id="huge"] {
     color: orange;
 }
 
-td[delay="small"] {
+.delay[id="small"] {
     color: yellow;
 }
 
