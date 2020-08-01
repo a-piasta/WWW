@@ -155,3 +155,19 @@ li:nth-child(even) {
 li:nth-child(odd) {
     background-color: lightgreen;
 }
+
+.powodzenie {
+    position: fixed;
+    left: 5%;
+    top: 5%;
+    opacity: 90%;
+    background-color: gray;
+    width: 90%;
+    height: 90vh;
+}
+
+#success {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 250%;
+    padding-top: 35vh;
+}
