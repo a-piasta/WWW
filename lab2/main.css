@@ -49,7 +49,7 @@ p[id="trzeci"] {
     background-color: lightgreen;
     width: 200px;
     top: 51px;
-    left: 100px;
+    left: 1000px;
     position: absolute;
 }
 
@@ -115,20 +115,18 @@ footer {
     }
 }
 
-@media screen and (min-width: 800px) {
-    .flex2 {
-        display: flex;
+@media screen and (min-width: 600px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: [menu] 100px [menu-end] 15px [central side] 4fr [central-end] 15px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .flex-container {
-        display: flex;
+    .grid-container {
+        display: grid;
+        grid-template-columns: [menu] 200px [menu-end] 15px [central] 3fr [central-end] 15px [side] 1fr;
     }
-}
-
-.flex-container {
-    max-width: 1800px;
 }
 
 .formularz {

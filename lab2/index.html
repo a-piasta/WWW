@@ -9,8 +9,8 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <div class="flex-container">
-        <div>
+    <div class="grid-container">
+        <div style="grid-column-start: menu; grid-column-end: menu-end;">
             <section>
                 <nav>
                     Menu
@@ -32,89 +32,95 @@
                 </nav>
             </section>
         </div>
-        <div class="flex2">
-            <div>
-                <h1>Lista lotów</h1>
-                <img src="lufthansa.jpg" class="logo" alt="logo firmy">
-                <p id="pierwszy">Pierwszy akapit</p>
-                <p id="drugi">Drugi akapit</p>
-            </div>
-            <div>
-                <p id="trzeci">Ale super lot!</p>
-                <table>
-                    <tr>
-                        <th>Nr lotu</th>
-                        <th>Skąd</th>
-                        <th>Dokąd</th>
-                        <th>Data</th>
-                        <th>Godzina</th>
-                        <th>Opóźnienie</th>
-                    </tr>
-                    <tr>
-                        <td><a href="lot.html">41</a></td>
-                        <td>Gdynia</td>
-                        <td>Radom</td>
-                        <td>11-03-2020</td>
-                        <td>11:33</td>
-                        <td><div class="delay" id="none">Brak</div></td>
-                    </tr>
-                    <tr>
-                        <td><a href="lot.html">42</a></td>
-                        <td>Radom</td>
-                        <td>Białystok</td>
-                        <td>12-03-2020</td>
-                        <td>6:25</td>
-                        <td><div class="delay" id="cancelled">Odwołany (lotnisko w Białymstoku jest nieprzystosowane technicznie)</div></td>
-                    </tr>
-                    <tr>
-                        <td><a href="lot.html">PLF 101 – I – M</a></td>
-                        <td>Warszawa</td>
-                        <td>Smoleńsk</td>
-                        <td>10-04-2010</td>
-                        <td>7:00</td>
-                        <td><div class="delay" id="small">Opóźniony 27 minut</div></td>
-                    </tr>
-                    <tr>
-                        <td><a href="lot.html">2137</a></td>
-                        <td>Frankfurt</td>
-                        <td>CPK (gmina Baranów)</td>
-                        <td>24-12-2027</td>
-                        <td>21:37</td>
-                        <td><div class="delay" id="huge">Opóźniony 10 lat (CPK nadal nie jest wybudowane)</div></td>
-                    </tr>
-                </table>
-                <div class="formularz">
-                    <h3>Zarezerwuj lot</h3>
-                    <form method="POST">
-                        Imię: <input type="text" name="name" value=""><br>
-                        Nazwisko: <input type="text" name="surname" value=""><br>
-                        Data: <input type="date" name="date"><br>
-                        Miejsce przylotu:
-                        <select name="start">
-                            <option value="Radom">Radom</option>
-                            <option value="Warszawa-Okęcie">Warszawa-Okęcie</option>
-                            <option value="Warszawa-Modlin">Warszawa-Modlin</option>
-                            <option value="Gdańsk">Gdańsk</option>
-                            <option value="Frankfurt">Frankfurt</option>
-                            <option value="Smoleńsk">Smoleńsk</option>
-                            <option value="Białystok">Białystok</option>
-                        </select>
-                        <br>
-                        Miejsce wylotu:
-                        <select name="start">
-                            <option value="Radom">Radom</option>
-                            <option value="Warszawa-Okęcie">Warszawa-Okęcie</option>
-                            <option value="Warszawa-Modlin">Warszawa-Modlin</option>
-                            <option value="Gdańsk">Gdańsk</option>
-                            <option value="Frankfurt">Frankfurt</option>
-                            <option value="Smoleńsk">Smoleńsk</option>
-                            <option value="Białystok">Białystok</option>
-                        </select>
-                        <br>
-                        <input type="reset" value="Wyczyść">
-                        <input type="submit" value="Zarezerwuj">
-                    </form>
-                </div>
+        <div style="grid-column-start: central;">
+            <h1>Lista lotów</h1>
+            <img src="lufthansa.jpg" class="logo" alt="logo firmy">
+            <p id="pierwszy">Pierwszy akapit</p>
+            <p id="drugi">Drugi akapit</p>
+            <p id="trzeci">Ale super lot!</p>
+        </div>
+        <div style="grid-column-start: side; grid-column-end: auto;">
+            <table>
+                <tr>
+                    <th>Nr lotu</th>
+                    <th>Skąd</th>
+                    <th>Dokąd</th>
+                    <th>Data</th>
+                    <th>Godzina</th>
+                    <th>Opóźnienie</th>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">41</a></td>
+                    <td>Gdynia</td>
+                    <td>Radom</td>
+                    <td>11-03-2020</td>
+                    <td>11:33</td>
+                    <td>
+                        <div class="delay" id="none">Brak</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">42</a></td>
+                    <td>Radom</td>
+                    <td>Białystok</td>
+                    <td>12-03-2020</td>
+                    <td>6:25</td>
+                    <td>
+                        <div class="delay" id="cancelled">Odwołany (lotnisko w Białymstoku jest nieprzystosowane technicznie)</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">PLF 101 – I – M</a></td>
+                    <td>Warszawa</td>
+                    <td>Smoleńsk</td>
+                    <td>10-04-2010</td>
+                    <td>7:00</td>
+                    <td>
+                        <div class="delay" id="small">Opóźniony 27 minut</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">2137</a></td>
+                    <td>Frankfurt</td>
+                    <td>CPK (gmina Baranów)</td>
+                    <td>24-12-2027</td>
+                    <td>21:37</td>
+                    <td>
+                        <div class="delay" id="huge">Opóźniony 10 lat (CPK nadal nie jest wybudowane)</div>
+                    </td>
+                </tr>
+            </table>
+            <div class="formularz">
+                <h3>Zarezerwuj lot</h3>
+                <form method="POST">
+                    Imię: <input type="text" name="name" value=""><br>
+                    Nazwisko: <input type="text" name="surname" value=""><br>
+                    Data: <input type="date" name="date"><br>
+                    Miejsce przylotu:
+                    <select name="start">
+                        <option value="Radom">Radom</option>
+                        <option value="Warszawa-Okęcie">Warszawa-Okęcie</option>
+                        <option value="Warszawa-Modlin">Warszawa-Modlin</option>
+                        <option value="Gdańsk">Gdańsk</option>
+                        <option value="Frankfurt">Frankfurt</option>
+                        <option value="Smoleńsk">Smoleńsk</option>
+                        <option value="Białystok">Białystok</option>
+                    </select>
+                    <br>
+                    Miejsce wylotu:
+                    <select name="start">
+                        <option value="Radom">Radom</option>
+                        <option value="Warszawa-Okęcie">Warszawa-Okęcie</option>
+                        <option value="Warszawa-Modlin">Warszawa-Modlin</option>
+                        <option value="Gdańsk">Gdańsk</option>
+                        <option value="Frankfurt">Frankfurt</option>
+                        <option value="Smoleńsk">Smoleńsk</option>
+                        <option value="Białystok">Białystok</option>
+                    </select>
+                    <br>
+                    <input type="reset" value="Wyczyść">
+                    <input type="submit" value="Zarezerwuj">
+                </form>
             </div>
         </div>
     </div>
