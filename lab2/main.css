@@ -24,9 +24,16 @@ p.info {
     width: 200%;
 }
 
-h3, ol, nav {
+h3, ol {
     text-align: left;
 }
+
+ul.list_menu {
+    list-style-type: none;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 p[id="pierwszy"] {
     background-color: red;
@@ -55,6 +62,7 @@ table {
     border: double;
     text-align: left;
 }
+
 th {
     border: solid;
     padding-left: 12px;
@@ -62,6 +70,7 @@ th {
     padding-top: 4px;
     padding-bottom: 4px;
 }
+
 td {
     border: groove;
     padding-left: 12px;
@@ -69,10 +78,37 @@ td {
     padding-top: 4px;
     padding-bottom: 4px;
 }
+
+td[delay] {
+    font-weight: bold;
+}
+
+td[delay="cancelled"] {
+    color: red;
+}
+
+td[delay="huge"] {
+    color: orange;
+}
+
+td[delay="small"] {
+    color: yellow;
+}
+
 footer {
     background-color: aliceblue;
     color: green;
     font-family: sans-serif;
     font-size: 30px;
     width: 50%;
-}  
+}
+
+:link, :visited {
+    color: blue;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.flex-container {
+    display: flex;
+}

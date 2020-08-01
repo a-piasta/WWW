@@ -9,64 +9,78 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <section>
-        <nav>
-            <ul class="list_menu">Menu
-                <li>cennik</li>
-                <li>rezerwacje</li>
-                <li>znajdź pracę</li>
-                <li>podróż z dziećmi</li>
-                <li>bagaż</li>
-                <li>popularne kierunki podróży</li>
-                <li>
-                    <ul class="list">Bilety
-                        <li>Pierwsza klasa</li>
-                        <li>Druga klasa</li>
+    <div class="flex-container">
+        <div>
+            <section>
+                <nav>
+                    <ul class="list_menu">Menu
+                        <li><a href="lot.html">cennik</a></li>
+                        <li><a href="lot.html">rezerwacje</a></li>
+                        <li><a href="lot.html">znajdź pracę</a></li>
+                        <li>podróż z dziećmi</li>
+                        <li>bagaż</li>
+                        <li>popularne kierunki podróży</li>
+                        <li>
+                            <ul class="list">Bilety
+                                <li>Pierwsza klasa</li>
+                                <li>Druga klasa</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </nav>
-    </section>
-    <h1>Lista lotów</h1>
-    <img src="lufthansa.jpg" class="logo" alt="logo firmy">
-    <p id="pierwszy">Pierwszy akapit</p>
-    <p id="drugi">Drugi akapit</p>
-    <div>
-        <p id="trzeci">Ale super lot!</p>
-        <table>
-            <tr>
-                <th>Nr lotu</th>
-                <th>Skąd</th>
-                <th>Dokąd</th>
-                <th>Data</th>
-                <th>Godzina</th>
-                <th>Opóźnienie</th>
-            </tr>
-            <tr>
-                <td><a href="lot.html">41</a></td>
-                <td>Gdynia</td>
-                <td>Radom</td>
-                <td>11-03-2020</td>
-                <td>11:33</td>
-                <td>Brak</td>
-            </tr>
-            <tr>
-                <td><a href="lot.html">42</a></td>
-                <td>Radom</td>
-                <td>Białystok</td>
-                <td>12-03-2020</td>
-                <td>6:25</td>
-                <td>Odwołany (lotnisko w Białymstoku jest nieprzystosowane technicznie)</td>
-            </tr>
-            <tr>
-                <td><a href="lot.html">PLF 101 – I – M</a></td>
-                <td>Warszawa</td>
-                <td>Smoleńsk</td>
-                <td>10-04-2010</td>
-                <td>7:00</td>
-                <td>Opóźniony 27 minut</td>
-            </tr>
-        </table>
+                </nav>
+            </section>
+        </div>
+        <div>
+            <h1>Lista lotów</h1>
+            <img src="lufthansa.jpg" class="logo" alt="logo firmy">
+            <p id="pierwszy">Pierwszy akapit</p>
+            <p id="drugi">Drugi akapit</p>
+        </div>
+        <div>
+            <p id="trzeci">Ale super lot!</p>
+            <table>
+                <tr>
+                    <th>Nr lotu</th>
+                    <th>Skąd</th>
+                    <th>Dokąd</th>
+                    <th>Data</th>
+                    <th>Godzina</th>
+                    <th>Opóźnienie</th>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">41</a></td>
+                    <td>Gdynia</td>
+                    <td>Radom</td>
+                    <td>11-03-2020</td>
+                    <td>11:33</td>
+                    <td delay="none">Brak</td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">42</a></td>
+                    <td>Radom</td>
+                    <td>Białystok</td>
+                    <td>12-03-2020</td>
+                    <td>6:25</td>
+                    <td delay="cancelled">Odwołany (lotnisko w Białymstoku jest nieprzystosowane technicznie)</td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">PLF 101 – I – M</a></td>
+                    <td>Warszawa</td>
+                    <td>Smoleńsk</td>
+                    <td>10-04-2010</td>
+                    <td>7:00</td>
+                    <td delay="small">Opóźniony 27 minut</td>
+                </tr>
+                <tr>
+                    <td><a href="lot.html">2137</a></td>
+                    <td>Frankfurt</td>
+                    <td>CPK (gmina Baranów)</td>
+                    <td>24-12-2027</td>
+                    <td>21:37</td>
+                    <td delay="huge">Opóźniony 10 lat (CPK nadal nie jest wybudowane)</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <footer>
         Autor: Juliusz Pham
