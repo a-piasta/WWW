@@ -109,8 +109,26 @@ footer {
     text-decoration: none;
 }
 
+@media screen and (max-width: 400px) {
+    div[id="zdjecia"], div[id="pogoda"] {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .flex2 {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .flex-container {
+        display: flex;
+    }
+}
+
 .flex-container {
-    display: flex;
+    max-width: 1800px;
 }
 
 div[id="formularz"] {
