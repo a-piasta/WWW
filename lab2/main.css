@@ -149,3 +149,11 @@ footer {
     top: 0px;
     left: 200px;
 }
+
+li:nth-child(even) {
+    background-color: lightblue;
+}
+
+li:nth-child(odd) {
+    background-color: lightgreen;
+}
