@@ -1,0 +1,9 @@
+div.meme-list {
+    display: flex;
+    max-width: 1500px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

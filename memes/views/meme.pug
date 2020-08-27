@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title= title
+    style
+        include style.css
+    body
+        h1= message
+        h1 <i>Meme</i>
+        h1 #{meme.name}
+
+        img(class='meme-thumbnail', src=meme.url)
+
+        form(action=`/meme/${meme.id}`, method='post')
+            input(type='number', name='price', value='', placeholder='New price', required=true)
+            br
+            input(type='submit', value='Update price')
+
+        h2 Meme price history
+        table
+            thead
+                tr
+                    th Price
+            tbody
+                each price in meme.priceHistory
+                    tr
+                        td #{price}

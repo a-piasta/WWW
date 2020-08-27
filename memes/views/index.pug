@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+  style
+    include style.css
+  body
+    h1= message
+    img(src="https://oaza-memow.pl/img/uploads/meme_QcykflT3mjuuvWyGKG8yN0asi.jpeg")
+    h1="Meme list"
+    div.meme-list
+      each meme in memes
+        div.meme-container
+          a(href="meme/" + meme.id) #{meme.name}
+          img(src=meme.url)
+          div.price=meme.price
