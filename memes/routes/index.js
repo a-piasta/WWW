@@ -1,6 +1,8 @@
 var express = require('express');
 var Memes = require('../memes.js');
 var router = express.Router();
+var csrf = require('csurf');
+var csrfProtection = csrf({ cookie: true });
 
 const memes = new Memes();
 /* GET home page. */
@@ -12,10 +14,12 @@ router.get('/', function(req, res) {
   })
 });
 
-router.get('/meme/:memeId', function (req, res) {
+router.get('/meme/:memeId', csrfProtection, function (req, res) {
   let meme = memes.get_meme(req.params.memeId);
   if (!meme) res.status(404).send('No such meme');
-  res.render('meme', { meme: meme })
+  res.render('meme', {
+    meme: meme,
+    csrfToken: req.csrfToken() })
 });
 
 router.use(express.urlencoded({
@@ -23,7 +27,7 @@ router.use(express.urlencoded({
 })); 
 
 
-router.post('/meme/:memeId', function (req, res) {
+router.post('/meme/:memeId', csrfProtection, function (req, res) {
   let meme = memes.get_meme(req.params.memeId);
   if (!meme) {
     res.status(404).send('No such meme');
@@ -31,7 +35,7 @@ router.post('/meme/:memeId', function (req, res) {
   let price = req.body.price;
   meme.change_price(price);
   console.log(req.body.price);
-  res.render('meme', { meme: meme })
-})
-  
+  res.redirect('/meme/' + req.params.memeId);
+});
+
 module.exports = router;
