@@ -16,12 +16,6 @@ const mostExpensive = [
         'name': 'Elite',
         'price': 1200,
         'url': 'https://i.imgflip.com/30zz5g.jpg'
-    },
-    {
-        'id': 7,
-        'name': 'OSU',
-        'price': 727,
-        'url': 'https://preview.redd.it/ano80gm7odj51.png?width=1000&auto=webp&s=1c31272a478f44f57f24edc3515ac72a1747e0cc'
     }
 ]
 
@@ -30,39 +24,47 @@ class Meme {
         this.id = memeProps.id;
         this.name = memeProps.name;
         this.url = memeProps.url;
-
         this._price = memeProps.price;
-        this._priceHistory = [this._price];
     }
 
     get price() {
         return this._price;
     }
+}
 
-    get priceHistory() {
-        return [...this._priceHistory].reverse();
+class DbMemes {
+    constructor(db) {
+        this._db = db;
+        this._db.init.then(() => {
+            Promise.all(mostExpensive.map(meme => this._db.addMeme(
+                meme.name, meme.price, meme.url, meme.id
+            ))).catch(err => console.error(err));
+        });
     }
 
-    change_price(newPrice) {
-        this._priceHistory.push(newPrice);
-        this._price = newPrice;
+    async mostExpensive() {
+        const memeRows = await this._db.getMostExpensiveMemes();
+        console.log(memeRows);
+        return memeRows.map(x => new Meme(x, this._db));
+    }
+
+    async getById(id) {
+        let meme = null;
+        try {
+            meme = await this._db.getMemeById(id);
+        } catch (err) {
+            console.log(err);
+        }
+        return meme;
+    }
+
+    async getPriceHistoryById(id) {
+        return await this._db.getMemePricesById(id);
+    }
+
+    async addNewMemePrice(id, userId, price) {
+        return await this._db.addNewMemePrice(id, userId, price);
     }
 }
 
-class Memes {
-    constructor() {
-        this.memes = mostExpensive.map(x => new Meme(x));
-    }
-
-    get mostExpensive() {
-        this.memes.sort((a, b) => b.price - a.price);
-        return this.memes.slice(0, 3);
-    }
-
-    get_meme(id) {
-        const meme = this.memes.filter(value => value.id === +id);
-        return meme ? meme[0] : null;
-    }
-}
-
-module.exports = Memes;
+module.exports = DbMemes;
